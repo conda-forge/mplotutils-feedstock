@@ -1,6 +1,6 @@
 {% set name = "mplotutils" %}
-{% set version = "0.6.0" %}
-{% set python_min = "3.10" %}
+{% set version = "0.7.0" %}
+{% set python_min = "3.11" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/mplotutils-{{ version }}.tar.gz
-  sha256: 5be2a9fbc100247cc42aa751f89407b3b3dd6130e65ef08f816a1bf2c43d353f
+  sha256: 0204c2231493fd19892d09a917e60755a6cbce4eed186917c4e3100f24b304d2
 
 build:
   noarch: python
@@ -23,10 +23,12 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - cartopy >=0.22
-    - matplotlib-base >=3.8
-    - numpy >=1.24
-    - xarray >=2023.9
+    - cartopy >=0.23
+    - matplotlib-base >=3.9
+    - numpy >=1.26
+    - packaging >=23.1
+    - shapely >=2.0
+    - xarray >=2024.7
   run_constrained:
     - seaborn >=0.13
 
